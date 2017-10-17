@@ -5,7 +5,7 @@ Setup:
 ------
 1. Download and install Node.js, mysql, and git.
 2. during set up of mysql you will be asked to create a root user/admin user and passowords for them. make note of this information.
-3. Clone the git repo for the project at (or just unzip the project from the files attached in the email I sent)
+3. Clone the git repo for the project at https://github.com/BestMattEver/Node_Leaderboard.git (or just unzip the project from the files attached in the email I sent)
 4. Once mysql is installed, one of the standard programs installed in the suite is called "mysql workbench":
 - 4a. Open mysql workbench and use its "open sql script.." option (under "file" in the top left) to Load and run the included "dbSetup.sql"
 - 4b. This will set up the initial mysql database and table for players, as well as add 12 starting players.
