@@ -1,0 +1,32 @@
+How to use the player scores app:
+==================================
+
+Setup:
+------
+1. Download and install Node.js, mysql, and git.
+2. during set up of mysql you will be asked to create a root user/admin user and passowords for them. make note of this information.
+3. Clone the git repo for the project at (or just unzip the project from the files attached in the email I sent)
+4. Once mysql is installed, one of the standard programs installed in the suite is called "mysql workbench":
+- 4a. Open mysql workbench and use its "open sql script.." option (under "file" in the top left) to Load and run the included "dbSetup.sql"
+- 4b. This will set up the initial mysql database and table for players, as well as add 12 starting players.
+5. open "server.js" and change lines 13 and 14 to reflect YOUR personal admin or root user"s username and password. save the file.
+6. Now, run the server by using bash to cd into the project directory and use the command "node server.js"
+- 6a. If done correctly, you should see the message "server listening on port 5000" appear in bash. Now you"re ready to use the app.
+
+To get the top 10 scores:
+--------------------------
+1. With the server running in bash, use a web browser to navigate to "http://localhost:5000/top10"
+2. you should see the top 10 player names and scores appear in the browser window in json format, in order.
+
+--or--
+
+1. Use postman (you"ll need to download it) to make a GET request to the same url above.
+2. In the return area for the request you should see that the json object that is returned contains the top 10 players and scores in order
+
+To set a player"s score:
+------------------------
+ 1. Use Postman (or another API testing application) to send a POST request to "http://localhost:5000/postScore"
+ - 1a. in the body of your request include a json object in the following format:
+ - 1b. {"player_name":"players Name", "score": 100}
+ - 1c. This should post a score to the DB for that player, and/or overwrite that player"s score if they already have one and it is lower than the submitted score.
+ - 1d. the return area of the request should show a json object with STATUS: 1 and a helpful confirmation message.
